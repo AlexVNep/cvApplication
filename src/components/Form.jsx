@@ -1,6 +1,7 @@
 import PersonalDetailsInput from "./PersonalDetailsInput";
 import EducationInput from "./EducationInput";
 import WorkXpInput from "./WorkXpInput";
+import Button from "./Button";
 
 function Form() {
   return (
@@ -18,6 +19,7 @@ function Form() {
           <h2>Work Experience</h2>
           <WorkXpInput />
         </div>
+        <Button text="Submit" />
       </form>
     </>
   );
