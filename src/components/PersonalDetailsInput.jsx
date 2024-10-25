@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 function PersonalDetailsInput() {
   return (
     <>
@@ -9,6 +11,7 @@ function PersonalDetailsInput() {
       <input type="email" name="email" id="email" />
       <label htmlFor="tel">Phone: </label>
       <input type="tel" name="tel" id="tel" />
+      <Button text="Edit" />
     </>
   );
 }

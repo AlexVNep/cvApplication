@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 function EducationInput() {
   return (
     <>
@@ -9,6 +11,7 @@ function EducationInput() {
       <input type="date" name="study-start" id="study-start" />
       <label htmlFor="study-end">Year Graduated: </label>
       <input type="tel" name="study-end" id="study-end" />
+      <Button text="Edit" />
     </>
   );
 }

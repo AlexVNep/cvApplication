@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 function WorkXpInput() {
   return (
     <>
@@ -11,6 +13,7 @@ function WorkXpInput() {
       <input type="date" name="company-start" id="company-start" />
       <label htmlFor="company-end">Year Departed: </label>
       <input type="tel" name="company-end" id="company-end" />
+      <Button text="Edit" />
     </>
   );
 }
