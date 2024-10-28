@@ -4,34 +4,34 @@ import EducationInput from "./EducationInput";
 import WorkXpInput from "./WorkXpInput";
 import Button from "./Button";
 
-function Form({ onSubmit }) {
-  const [formData, setFormData] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    tel: "",
-    school: "",
-    degree: "",
-    studyStart: "",
-    studyEnd: "",
-    company: "",
-    position: "",
-    responsibilities: "",
-    companyStart: "",
-    companyEnd: "",
+function Form({ formData = {}, onSubmit }) {
+  const [formFields, setFormFields] = useState({
+    fname: formData ? formData.fname : "",
+    lname: formData ? formData.lname : "",
+    email: formData ? formData.email : "",
+    tel: formData ? formData.tel : "",
+    school: formData ? formData.school : "",
+    degree: formData ? formData.degree : "",
+    studyStart: formData ? formData.studyStart : "",
+    studyEnd: formData ? formData.studyEnd : "",
+    company: formData ? formData.company : "",
+    position: formData ? formData.position : "",
+    responsibilities: formData ? formData.responsibilities : "",
+    companyStart: formData ? formData.companyStart : "",
+    companyEnd: formData ? formData.companyEnd : "",
   });
 
-  const handleChange = (e) => {
+  function handleChange(e) {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormFields((prev) => ({
       ...prev,
       [name]: value,
     }));
-  };
+  }
 
   function handleClick(e) {
     e.preventDefault();
-    onSubmit(formData);
+    onSubmit(formFields);
   }
 
   return (
@@ -40,11 +40,14 @@ function Form({ onSubmit }) {
         <form>
           <div>
             <h2>General Information</h2>
-            <PersonalDetailsInput formData={formData} onChange={handleChange} />
+            <PersonalDetailsInput
+              formData={formFields}
+              onChange={handleChange}
+            />
             <h2>Education</h2>
-            <EducationInput formData={formData} onChange={handleChange} />
+            <EducationInput formData={formFields} onChange={handleChange} />
             <h2>Work Experience</h2>
-            <WorkXpInput formData={formData} onChange={handleChange} />
+            <WorkXpInput formData={formFields} onChange={handleChange} />
           </div>
 
           <Button onClick={handleClick}>Submit</Button>
