@@ -12,7 +12,7 @@ function WorkXpInput() {
       <label htmlFor="company-start">Year Started: </label>
       <input type="date" name="company-start" id="company-start" />
       <label htmlFor="company-end">Year Departed: </label>
-      <input type="tel" name="company-end" id="company-end" />
+      <input type="date" name="company-end" id="company-end" />
       <Button text="Edit" />
     </>
   );
