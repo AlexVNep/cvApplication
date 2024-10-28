@@ -2,23 +2,28 @@ import { useState } from "react";
 import ResumeHeader from "./components/ResumeHeader";
 import ResumeBody from "./components/ResumeBody";
 import Form from "./components/Form";
+import Button from "./components/Button";
 import "./App.css";
 
 function App() {
   const [displayText, setDisplayText] = useState(null);
-  const [formDisplay, setFormDisplay] = useState(true);
+  const [isEditing, setIsEditing] = useState(true);
 
   // Callback to handle form submission data from Form.js
-  const handleFormSubmit = (data) => {
+  function handleFormSubmit(data) {
     setDisplayText(data); // Store form data in App.js state
-    setFormDisplay(false);
-  };
+    setIsEditing(false);
+  }
 
-  if (formDisplay) {
+  function handleEditClick() {
+    setIsEditing(true);
+  }
+
+  if (isEditing) {
     return (
       <>
         <div>
-          <Form onSubmit={handleFormSubmit} />
+          <Form formData={displayText} onSubmit={handleFormSubmit} />
         </div>
       </>
     );
@@ -31,6 +36,7 @@ function App() {
           <div>
             <ResumeHeader displayText={displayText} />
             <ResumeBody displayText={displayText} />
+            <Button onClick={handleEditClick}>Edit</Button>
           </div>
         )}
       </div>
