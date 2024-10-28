@@ -23,6 +23,9 @@ function App() {
     return (
       <>
         <div>
+          <h1 className="heading">CV Builder</h1>
+        </div>
+        <div className="form-group">
           <Form formData={displayText} onSubmit={handleFormSubmit} />
         </div>
       </>
@@ -31,11 +34,17 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="resume">
         {displayText && (
           <div>
-            <ResumeHeader displayText={displayText} />
-            <ResumeBody displayText={displayText} />
+            <div>
+              <h1 className="resume-header">Resume</h1>
+              <ResumeHeader displayText={displayText} />
+            </div>
+            <div>
+              <h2>Education and Work Experience</h2>
+              <ResumeBody displayText={displayText} />
+            </div>
             <Button onClick={handleEditClick}>Edit</Button>
           </div>
         )}
