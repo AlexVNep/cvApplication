@@ -1,4 +1,8 @@
-function Button(props) {
-  return <button>{props.text}</button>;
+function Button({ children, type, onClick }) {
+  return (
+    <button type={type} onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 export default Button;
