@@ -6,23 +6,35 @@ import "./App.css";
 
 function App() {
   const [displayText, setDisplayText] = useState(null);
+  const [formDisplay, setFormDisplay] = useState(true);
 
   // Callback to handle form submission data from Form.js
   const handleFormSubmit = (data) => {
     setDisplayText(data); // Store form data in App.js state
+    setFormDisplay(false);
   };
 
-  return (
-    <div>
-      <Form onSubmit={handleFormSubmit} />
-
-      {displayText && (
+  if (formDisplay) {
+    return (
+      <>
         <div>
-          <ResumeHeader displayText={displayText} />
-          <ResumeBody displayText={displayText} />
+          <Form onSubmit={handleFormSubmit} />
         </div>
-      )}
-    </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <div>
+        {displayText && (
+          <div>
+            <ResumeHeader displayText={displayText} />
+            <ResumeBody displayText={displayText} />
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
