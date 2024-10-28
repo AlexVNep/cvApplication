@@ -13,26 +13,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
+  border: 2px solid #646cff;
 }
 
-h1 {
+.heading,
+.resume-header {
+  text-shadow: 4px 4px #646cff;
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.resume {
+  border: 2px solid #646cff;
+  min-width: 100%;
+}
+
+input {
+  cursor: crosshair;
 }
 
 button {
@@ -43,10 +47,11 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  cursor: pointer;
+  cursor: crosshair;
   transition: border-color 0.25s;
 }
-button:hover {
+button:hover,
+input:hover {
   border-color: #646cff;
 }
 button:focus,
