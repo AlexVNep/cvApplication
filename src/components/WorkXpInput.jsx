@@ -1,19 +1,52 @@
-import Button from "./Button";
+import InputField from "./InputField";
+// import Button from "./Button";
 
-function WorkXpInput() {
+function WorkXpInput({ formData, onChange }) {
   return (
     <>
-      <label htmlFor="company">Company Name: </label>
-      <input type="text" id="company" />
-      <label htmlFor="position">Position Title: </label>
-      <input type="text" id="position" />
-      <label htmlFor="responsibilities">Responsibilities: </label>
-      <input type="text" id="responsibilities" />
-      <label htmlFor="company-start">Year Started: </label>
-      <input type="date" name="company-start" id="company-start" />
-      <label htmlFor="company-end">Year Departed: </label>
-      <input type="date" name="company-end" id="company-end" />
-      <Button text="Edit" />
+      <InputField
+        type="text"
+        value={formData.company}
+        placeholder="Company Name"
+        label="Company Name: "
+        name="company"
+        onChange={onChange}
+      />
+
+      <InputField
+        type="text"
+        value={formData.position}
+        placeholder="Position Held"
+        label="Position Title: "
+        name="position"
+        onChange={onChange}
+      />
+
+      <InputField
+        type="text"
+        value={formData.responsibilities}
+        placeholder="Responsibilities"
+        label="Responsibilities: "
+        name="responsibilities"
+        onChange={onChange}
+      />
+
+      <InputField
+        type="date"
+        value={formData.companyStart}
+        label="Year Started: "
+        name="companyStart"
+        onChange={onChange}
+      />
+
+      <InputField
+        type="date"
+        value={formData.companyEnd}
+        label="Year Started: "
+        name="companyStart"
+        onChange={onChange}
+      />
+      {/* <Button text="Edit" /> */}
     </>
   );
 }
