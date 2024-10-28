@@ -42,8 +42,8 @@ function WorkXpInput({ formData, onChange }) {
       <InputField
         type="date"
         value={formData.companyEnd}
-        label="Year Started: "
-        name="companyStart"
+        label="Year Ended: "
+        name="companyEnd"
         onChange={onChange}
       />
       {/* <Button text="Edit" /> */}
