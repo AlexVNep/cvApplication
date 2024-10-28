@@ -4,23 +4,8 @@ import EducationInput from "./EducationInput";
 import WorkXpInput from "./WorkXpInput";
 import Button from "./Button";
 
-function Form() {
+function Form({ onSubmit }) {
   const [formData, setFormData] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    tel: "",
-    school: "",
-    degree: "",
-    studyStart: "",
-    studyEnd: "",
-    company: "",
-    position: "",
-    responsibilities: "",
-    companyStart: "",
-    companyEnd: "",
-  });
-  const [displayText, setDisplayText] = useState({
     fname: "",
     lname: "",
     email: "",
@@ -46,7 +31,7 @@ function Form() {
 
   function handleClick(e) {
     e.preventDefault();
-    setDisplayText(formData);
+    onSubmit(formData);
   }
 
   return (
@@ -64,23 +49,6 @@ function Form() {
 
           <Button onClick={handleClick}>Submit</Button>
         </form>
-      </section>
-      <section>
-        <div>
-          <p>First Name: {displayText.fname}</p>
-          <p>Last Name: {displayText.lname}</p>
-          <p>Email: {displayText.email}</p>
-          <p>Phone: {displayText.tel}</p>
-          <p>School Name: {displayText.school}</p>
-          <p>Degree: {displayText.degree}</p>
-          <p>Year Started: {displayText.studyStart}</p>
-          <p>Year Ended: {displayText.studyEnd}</p>
-          <p>Company Name: {displayText.company}</p>
-          <p>Position: {displayText.position}</p>
-          <p>Responsibilities: {displayText.responsibilities}</p>
-          <p>Year Started: {displayText.companyStart}</p>
-          <p>Year Ended: {displayText.companyEnd}</p>
-        </div>
       </section>
     </>
   );
