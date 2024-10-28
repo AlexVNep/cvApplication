@@ -3,7 +3,7 @@ import ResumeHeader from "./components/ResumeHeader";
 import ResumeBody from "./components/ResumeBody";
 import Form from "./components/Form";
 import Button from "./components/Button";
-import "./App.css";
+import "./styles/App.css";
 
 function App() {
   const [displayText, setDisplayText] = useState(null);
