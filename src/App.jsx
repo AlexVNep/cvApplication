@@ -1,8 +1,9 @@
 import { useState } from "react";
 import ResumeHeader from "./components/ResumeHeader";
-import ResumeBody from "./components/ResumeBody";
+import ResumeWork from "./components/ResumeWork";
 import Form from "./components/Form";
 import Button from "./components/Button";
+import ResumeEducation from "./components/ResumeEducation";
 import "./styles/App.css";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
   if (isEditing) {
     return (
       <>
-        <div>
+        <div className="form-heading">
           <h1 className="heading">CV Builder</h1>
         </div>
         <div className="form-group">
@@ -37,13 +38,17 @@ function App() {
       <div className="resume">
         {displayText && (
           <div>
-            <div>
-              <h1 className="resume-header">Resume</h1>
+            <div className="resume-header">
+              <h1 className="resume-heading">Resume</h1>
               <ResumeHeader displayText={displayText} />
             </div>
-            <div>
-              <h2>Education and Work Experience</h2>
-              <ResumeBody displayText={displayText} />
+            <div className="education-block">
+              <h2>Education Experience</h2>
+              <ResumeEducation displayText={displayText} />
+            </div>
+            <div className="work-block">
+              <h2>Work Experience</h2>
+              <ResumeWork displayText={displayText} />
             </div>
             <Button onClick={handleEditClick}>Edit</Button>
           </div>
