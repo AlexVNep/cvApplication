@@ -1,10 +1,6 @@
-function ResumeBody({ displayText }) {
+function ResumeWork({ displayText }) {
   return (
     <div>
-      <p>School Name: {displayText.school}</p>
-      <p>Degree: {displayText.degree}</p>
-      <p>Year Started: {displayText.studyStart}</p>
-      <p>Year Ended: {displayText.studyEnd}</p>
       <p>Company Name: {displayText.company}</p>
       <p>Position: {displayText.position}</p>
       <p>Responsibilities: {displayText.responsibilities}</p>
@@ -14,4 +10,4 @@ function ResumeBody({ displayText }) {
   );
 }
 
-export default ResumeBody;
+export default ResumeWork;
