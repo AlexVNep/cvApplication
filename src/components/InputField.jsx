@@ -1,8 +1,12 @@
 function InputField({ value, label, name, placeholder, type, onChange }) {
   return (
     <>
-      <div className="inputField-group">
-        {label && <label htmlFor="input-field">{label}</label>}
+      <div className="input-field-group">
+        {label && (
+          <label className="form-label" htmlFor="input-field">
+            {label}
+          </label>
+        )}
         <input
           type={type}
           value={value}
