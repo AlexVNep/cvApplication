@@ -23,8 +23,8 @@ function App() {
   if (isEditing) {
     return (
       <>
-        <div className="form-heading">
-          <h1 className="heading">CV Builder</h1>
+        <div className="bg-gradient-to-r from-purple-800 to-indigo-800 white p-6">
+          <h1 className="text-center text-white text-6xl">CV Builder</h1>
         </div>
         <div className="form-group">
           <Form formData={displayText} onSubmit={handleFormSubmit} />
@@ -35,25 +35,25 @@ function App() {
 
   return (
     <>
-      <div className="resume">
+      <section className="bg-gradient-to-r from-purple-800 to-indigo-800">
         {displayText && (
-          <div>
-            <div className="resume-header">
-              <h1 className="resume-heading">Resume</h1>
+          <div className="grid grid-rows-3 gap-4 justify-center ">
+            <div className="flex flex-col justify-center items-center">
+              <h1 className="text-center text-white text-6xl">Resume</h1>
               <ResumeHeader displayText={displayText} />
             </div>
-            <div className="education-block">
-              <h2>Education Experience</h2>
+            <div className="planet-background-1 rounded-md p-6">
+              <h2 className="text-xl font-bold">Education Experience</h2>
               <ResumeEducation displayText={displayText} />
             </div>
-            <div className="work-block">
-              <h2>Work Experience</h2>
+            <div className="planet-background-1 rounded-md p-6">
+              <h2 className="text-xl font-bold">Work Experience</h2>
               <ResumeWork displayText={displayText} />
             </div>
             <Button onClick={handleEditClick}>Edit</Button>
           </div>
         )}
-      </div>
+      </section>
     </>
   );
 }

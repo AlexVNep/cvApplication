@@ -36,18 +36,26 @@ function Form({ formData = {}, onSubmit }) {
 
   return (
     <>
-      <section>
-        <form>
-          <div>
-            <h2>General Information</h2>
-            <PersonalDetailsInput
-              formData={formFields}
-              onChange={handleChange}
-            />
-            <h2>Education</h2>
-            <EducationInput formData={formFields} onChange={handleChange} />
-            <h2>Work Experience</h2>
-            <WorkXpInput formData={formFields} onChange={handleChange} />
+      <section className="bg-gradient-to-r from-purple-800 to-indigo-800 py-10">
+        <form className="flex flex-col">
+          <div className="grid grid-rows-3 gap-4 justify-center rounded-lg shadow-sm  cursor-pointer p-6">
+            <div className="bg-indigo-500 rounded-md p-6">
+              <h2 className="text-xl font-bold">General Information</h2>
+              <PersonalDetailsInput
+                formData={formFields}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="bg-indigo-500 rounded-md p-6">
+              <h2 className="text-xl font-bold">Education</h2>
+              <EducationInput formData={formFields} onChange={handleChange} />
+            </div>
+
+            <div className="bg-indigo-500 rounded-md p-6">
+              <h2 className="text-xl font-bold">Work Experience</h2>
+              <WorkXpInput formData={formFields} onChange={handleChange} />
+            </div>
           </div>
 
           <Button onClick={handleClick}>Submit</Button>
